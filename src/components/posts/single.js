@@ -6,6 +6,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
+import CardMedia from '@material-ui/core/CardMedia';
 
 const useStyles = makeStyles((theme) => ({
 	paper: {
@@ -39,7 +40,11 @@ export default function Post() {
 			<div className={classes.paper}> </div>{' '}
 			<div className={classes.heroContent}>
 				<Container maxWidth="sm">
-				    {data.posts.image}{' '}
+				<CardMedia
+											className={classes.cardMedia}
+											image={data.posts.image}
+											title="Image title"
+										/>
 					<Typography
 						component="h1"
 						variant="h2"

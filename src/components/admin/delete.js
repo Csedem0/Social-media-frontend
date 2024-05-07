@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axiosInstance from '../../axios';
-import { useHistory, useParams } from 'react-router-dom';
+import { NavLink, useHistory, useParams } from 'react-router-dom';
 //MaterialUI
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
@@ -14,17 +14,6 @@ export default function Create() {
 		e.preventDefault();
 		axiosInstance
 		    .delete(`admin/delete/${id}`)
-			.then(() => {
-                // Navigate back to the admin page after successful deletion
-                history.push('/admin/');
-            })
-            .catch((error) => {
-                if (error.response) {
-                    console.log(error.response.data);
-                    console.log(error.response.status);
-                    console.log(error.response.headers);
-                }window.location.reload();
-			});
 	};
 
 	return (
@@ -44,6 +33,14 @@ export default function Create() {
 				>
 					Press here to confirm delete
 				</Button>
+				<Link
+					component={NavLink}
+					to="/admin"
+					underline="none"
+					color="textPrimary"
+				>
+					Back to Admin
+				</Link>
 			</Box>
 		</Container>
 	);
