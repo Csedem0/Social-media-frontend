@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axiosInstance from '../../axios';
-import { NavLink, useHistory, useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 //MaterialUI
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
@@ -13,7 +13,17 @@ export default function Create() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		axiosInstance
-		    .delete(`admin/delete/${id}`)
+			delete(`admin/delete/${id}`)
+			.catch(function (error) {
+				if (error.response) {
+					console.log(error.response.data);
+					console.log(error.response.status);
+					console.log(error.response.headers);
+				}
+			})
+			.then(function () {
+				window.alert("Deleted successfully");
+			});
 	};
 
 	return (
@@ -33,14 +43,6 @@ export default function Create() {
 				>
 					Press here to confirm delete
 				</Button>
-				<Link
-					component={NavLink}
-					to="/admin"
-					underline="none"
-					color="textPrimary"
-				>
-					Back to Admin
-				</Link>
 			</Box>
 		</Container>
 	);
