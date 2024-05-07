@@ -14,17 +14,18 @@ export default function Create() {
 		e.preventDefault();
 		axiosInstance
 			.delete(`admin/delete/${id}`)
-			.catch(function (error) {
+			.then(() => {
+				window.alert("Deleted successfully");
+			})
+			.catch((error) => {
 				if (error.response) {
 					console.log(error.response.data);
 					console.log(error.response.status);
 					console.log(error.response.headers);
 				}
-			})
-			.then(function () {
-				window.alert("Deleted successfully");
 			});
 	};
+	
 
 	return (
 		<Container component="main" maxWidth="sm">
