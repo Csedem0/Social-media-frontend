@@ -59,43 +59,47 @@ const Posts = (props) => {
 								</TableRow>
 							</TableHead>
 							<TableBody>
-								{posts.map((post) => (
-									<TableRow key={post.id}>
-										<TableCell component="th" scope="row">
-											{post.id}
-										</TableCell>
-										<TableCell align="left">{post.category}</TableCell>
-										<TableCell align="left">
-											<Link
-												color="textPrimary"
-												href={`/post/${post.slug}`}
-												className={classes.link}
-											>
-												{post.title}
-											</Link>
-										</TableCell>
-										<TableCell align="left">
-											<Link
-												color="textPrimary"
-												href={`/admin/edit/${post.id}`}
-												className={classes.link}
-											>
-												<EditIcon />
-											</Link>
-											<Link
-												color="textPrimary"
-												href={`/admin/delete/${post.id}`}
-												className={classes.link}
-											>
-												<DeleteForeverIcon />
-											</Link>
-										</TableCell>
-									</TableRow>
-								))}
+								{posts.map((post) => {
+									return (
+										<TableRow>
+											<TableCell component="th" scope="row">
+												{post.id}
+											</TableCell>
+											<TableCell align="left">{post.category}</TableCell>
+
+											<TableCell align="left">
+												<Link
+													color="textPrimary"
+													href={'/post/' + post.slug}
+													className={classes.link}
+												>
+													{post.title}
+												</Link>
+											</TableCell>
+
+											<TableCell align="left">
+												<Link
+													color="textPrimary"
+													href={'/admin/edit/' + post.id}
+													className={classes.link}
+												>
+													<EditIcon></EditIcon>
+												</Link>
+												<Link
+													color="textPrimary"
+													href={'/admin/delete/' + post.id}
+													className={classes.link}
+												>
+													<DeleteForeverIcon></DeleteForeverIcon>
+												</Link>
+											</TableCell>
+										</TableRow>
+									);
+								})}
 								<TableRow>
 									<TableCell colSpan={4} align="right">
 										<Button
-											href="/admin/create"
+											href={'/admin/create'}
 											variant="contained"
 											color="primary"
 										>
