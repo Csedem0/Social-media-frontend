@@ -40,7 +40,7 @@ export default function Create() {
 	const [formData, updateFormData] = useState(initialFormData);
 
 	useEffect(() => {
-		axiosInstance.get('admin/edit/postdetail/' + id).then((res) => {
+		axiosInstance.put(`admin/edit/${id}/`).then((res) => {
 			updateFormData({
 				...formData,
 				['title']: res.data.title,

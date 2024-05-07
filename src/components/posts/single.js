@@ -25,7 +25,7 @@ export default function Post() {
 	});
 
 	useEffect(() => {
-		axiosInstance.get('post/' + slug).then((res) => {
+		axiosInstance.get(`post/${slug}`).then((res) => {
 			setData({
 				posts: res.data,
 			});
