@@ -49,9 +49,8 @@ const Posts = (props) => {
 	if (!posts || posts.length === 0) return <p>Can not find any posts, sorry</p>;
 	return (
 		<React.Fragment>
-			<Container maxWidth="md" component="main">
-			<Grid container spacing={5} alignItems="flex-end">
-			<Link
+			<div className={classes.viewAll}>
+									<Link
 											component={NavLink}
 											to="/admin"
 											underline="none"
@@ -67,10 +66,9 @@ const Posts = (props) => {
 										>
 											create
 										</Link>
-										</Grid>
-			<div className={classes.viewAll}>
-									
 									</div>
+			<Container maxWidth="md" component="main">
+			
 				<Grid container spacing={5} alignItems="flex-end">
 					{posts.map((post) => {
 						return (
