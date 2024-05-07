@@ -39,6 +39,7 @@ export default function Post() {
 			<div className={classes.paper}> </div>{' '}
 			<div className={classes.heroContent}>
 				<Container maxWidth="sm">
+				    {data.posts.image}{' '}
 					<Typography
 						component="h1"
 						variant="h2"
