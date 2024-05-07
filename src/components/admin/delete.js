@@ -13,14 +13,7 @@ export default function Create() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		axiosInstance
-        .delete(`admin/delete/${id}`)
-        .then(() => {
-            window.alert("Deleted successfully");
-        })
-        .catch((error) => {
-            console.error("Error deleting:", error);
-            // Handle error scenarios here
-        });
+		    .delete(`admin/delete/${id}`)
 	};
 
 	return (
