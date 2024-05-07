@@ -12,6 +12,7 @@ import TableRow from '@material-ui/core/TableRow';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import EditIcon from '@material-ui/icons/Edit';
 import Button from '@material-ui/core/Button';
+import { NavLink } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
 	cardMedia: {
@@ -78,30 +79,36 @@ const Posts = (props) => {
 											</TableCell>
 
 											<TableCell align="left">
+											<Link
+												component={NavLink}
+												to={`admin/edit/${post.id}/`}
+												underline="none"
+												color="textPrimary"
+											>
+												<EditIcon></EditIcon>
+										     </Link>
+												
 												<Link
-													color="textPrimary"
-													to={`admin/edit/${post.id}/`}
-													className={classes.link}
-												>
-													<EditIcon></EditIcon>
-												</Link>
-												<Link
-													color="textPrimary"
+													component={NavLink}
 													to={`admin/delete/${post.id}/`}
-													className={classes.link}
+													underline="none"
+													color="textPrimary"
 												>
 													<DeleteForeverIcon></DeleteForeverIcon>
-												</Link>
+										        </Link>
+												
 											</TableCell>
 										</TableRow>
 									);
 								})}
 								<TableRow>
 									<TableCell colSpan={4} align="right">
+										
 										<Link
+											component={NavLink}
 											to="/admin/create"
-											variant="contained"
-											color="primary"
+											underline="none"
+											color="textPrimary"
 										>
 											New Post
 										</Link>
