@@ -50,8 +50,8 @@ const Posts = (props) => {
 	return (
 		<React.Fragment>
 			<Container maxWidth="md" component="main">
-			<div className={classes.viewAll}>
-									<Link
+			<Grid container spacing={5} alignItems="flex-end">
+			<Link
 											component={NavLink}
 											to="/admin"
 											underline="none"
@@ -67,6 +67,9 @@ const Posts = (props) => {
 										>
 											create
 										</Link>
+										</Grid>
+			<div className={classes.viewAll}>
+									
 									</div>
 				<Grid container spacing={5} alignItems="flex-end">
 					{posts.map((post) => {

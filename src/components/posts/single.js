@@ -40,11 +40,7 @@ export default function Post() {
 			<div className={classes.paper}> </div>{' '}
 			<div className={classes.heroContent}>
 				<Container maxWidth="sm">
-				<CardMedia
-											className={classes.cardMedia}
-											image={data.posts.image}
-											title="Image title"
-										/>
+				
 					<Typography
 						component="h1"
 						variant="h2"
