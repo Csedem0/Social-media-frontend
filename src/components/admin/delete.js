@@ -14,18 +14,16 @@ export default function Create() {
 		e.preventDefault();
 		axiosInstance
 		    .delete(`admin/delete/${id}`)
-			.catch(function (error) {
-				if (error.response) {
-					console.log(error.response.data);
-					console.log(error.response.status);
-					console.log(error.response.headers);
-				}
-			})
-			.then(function () {
-					history.push({
-						pathname: '/admin/',
-					});
-					window.location.reload();
+			.then(() => {
+                // Navigate back to the admin page after successful deletion
+                history.push('/admin/');
+            })
+            .catch((error) => {
+                if (error.response) {
+                    console.log(error.response.data);
+                    console.log(error.response.status);
+                    console.log(error.response.headers);
+                }window.location.reload();
 			});
 	};
 

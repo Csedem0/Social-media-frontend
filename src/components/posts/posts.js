@@ -74,17 +74,19 @@ const Posts = (props) => {
 							// Enterprise card is full width at sm breakpoint
 							<Grid item key={post.id} xs={12} md={4}>
 								<Card className={classes.card}>
+									
 									<Link
-										color="textPrimary"
-										href={'post/' + post.slug}
-										className={classes.link}
-									>
-										<CardMedia
+											component={NavLink}
+											to={`/post/${post.slug}`}
+											underline="none"
+											color="textPrimary"
+										>
+											<CardMedia
 											className={classes.cardMedia}
 											image={post.image}
 											title="Image title"
 										/>
-									</Link>
+										</Link>
 									<CardContent className={classes.cardContent}>
 										<Typography
 											gutterBottom
