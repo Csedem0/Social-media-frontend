@@ -31,7 +31,7 @@ export default function Edit() {
   const classes = useStyles();
 
   const [formData, setFormData] = useState({
-    id: '',
+    author: 1,
     title: '',
     slug: '',
     excerpt: '',
@@ -62,7 +62,7 @@ export default function Edit() {
     axiosInstance.put(`admin/edit/${id}/`, formData)
       .then(() => {
         console.log('Post updated successfully!');
-        history.push('/admin/');
+		window.alert("Post updated successfully");
       })
       .catch((error) => {
         console.error('Error updating post:', error);

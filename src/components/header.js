@@ -44,21 +44,16 @@ function Header() {
 				className={classes.appBar}
 			>
 				<Toolbar className={classes.toolbar}>
-					<Typography
-						variant="h6"
-						color="inherit"
-						noWrap
-						className={classes.toolbarTitle}
-					>
+					
 						<Link
 							component={NavLink}
 							to="/"
 							underline="none"
 							color="textPrimary"
+							style={{ fontWeight: 'bold', fontSize: 'larger', padding: '5px' }}
 						>
-							Blog
+							BLOG
 						</Link>
-					</Typography>
 
 					<SearchBar
 						value={data.search}
@@ -66,7 +61,7 @@ function Header() {
 						onRequestSearch={() => goSearch(data.search)}
 					/>
 
-					<nav>
+					{/* <nav>
 						<Link
 							color="textPrimary"
 							href="#"
@@ -76,7 +71,7 @@ function Header() {
 						>
 							Register
 						</Link>
-					</nav>
+					</nav> */}
 					<Button
 						href="#"
 						color="primary"

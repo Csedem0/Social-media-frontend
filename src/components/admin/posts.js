@@ -70,9 +70,10 @@ const Posts = (props) => {
 
 											<TableCell align="left">
 												<Link
-													color="textPrimary"
+													component={NavLink}
 													to={`/post/${post.slug}/`}
-													className={classes.link}
+													underline="none"
+													color="textPrimary"
 												>
 													{post.title}
 												</Link>
